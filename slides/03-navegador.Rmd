@@ -1,0 +1,64 @@
+---
+title: "Web Scraping"
+subtitle: "Introdução ao Webscraping"
+author: "<img src = 'https://d33wubrfki0l68.cloudfront.net/9b0699f18268059bdd2e5c21538a29eade7cbd2b/67e5c/img/logo/cursor1-5.png' width = '20%'>"
+date: ""
+output:
+  xaringan::moon_reader:
+    css: ["default", "default-fonts", "css/custom-intro.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+knit: pagedown::chrome_print            
+---
+
+
+```{r, child="00-preamble.Rmd"}
+
+```
+
+---
+class: middle, center
+
+# `r blue("Usando o navegador")`
+
+# Exemplo 02: Sabesp
+
+- Nem sempre a API estará documentada.
+
+- Neste caso, descobrimos sua existência "na raça".
+
+- Técnicas mais importantes do profissional de raspagem:
+
+### Inspecionar elemento
+
+### Aba Network
+
+---
+
+# Vá ao seu navegador!
+
+.pull-left[
+
+Acesse: http://mananciais.sabesp.com.br/
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/browser.png")
+```
+
+]
+
+---
+
+# Inspect element
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/inspect.png")
+```
+

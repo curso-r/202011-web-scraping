@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Web Scraping</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <script src="libs/header-attrs-2.5/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard-0.2.3.9000/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard-0.2.3.9000/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link rel="stylesheet" href="css/custom-intro.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Web Scraping
+### <img src = 'https://d33wubrfki0l68.cloudfront.net/9b0699f18268059bdd2e5c21538a29eade7cbd2b/67e5c/img/logo/cursor1-5.png' width = '20%'>
+
+---
+
+
+
+
+
+
+
+
+
+
+class: middle, center
+
+# Sobre a Curso-R
+
+---
+
+class: middle, center
+
+## A empresa
+
+.pull-left[
+![](https://d33wubrfki0l68.cloudfront.net/295643c6243701ae6a9bac3fb8ad467ff0ce3c84/d1785/img/logo/cursor1-41.png)&lt;!-- --&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="img/logo_r6.png" width="1344" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="img/produtos.png" width="477" /&gt;
+]
+
+### [www.curso-r.com](https://www.curso-r.com)
+
+---
+
+## Ministrantes
+
+.pull-left[
+
+### Julio Trecenti
+
+&lt;img src="img/jtrecenti.png" width="30%" /&gt;
+
+
+Doutorando em Estatística pelo IME-USP. Secretário-geral da Associação Brasileira de Jurimetria (ABJ). Conselheiro do CONFE. Sócio da Terranova Consultoria. Trabalha com web scraping, arrumação de dados, construção de modelos preditivos, APIs, pacotes em R e dashboards em Shiny.
+
+]
+
+
+.pull-right[
+
+### Caio Lente
+
+&lt;img src="img/clente.png" width="30%" /&gt;
+
+
+Mestrando em Ciência da Computação no IME-USP e cientista de dados na Terranova Consultoria. Começou a se apaixonar pelo R em 2016 e agora não fala em outra coisa. Metido a designer, maníaco da organização e metade texano.
+
+]
+
+---
+
+## Linha do tempo
+
+&lt;center&gt;
+&lt;img src="img/linha_do_tempo.png" width = 45%&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+
+## Nossos cursos
+
+.pull-left[
+&lt;div class="container center"&gt;
+  &lt;div class="card"&gt;
+    &lt;h2&gt;Programação em R&lt;/h2&gt;
+    &lt;hr style = "background-color: #3bb44a;"/&gt;
+    &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/r4ds-1/"&gt;R para Ciência de dados I&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/r4ds-2/"&gt;R para Ciência de dados II&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/rcpp/"&gt;Introdução ao R com C++&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div class="container center"&gt;
+  &lt;div class="card"&gt;
+    &lt;h2&gt;Modelagem&lt;/h2&gt;
+    &lt;hr style = "background-color: #996699;"/&gt;
+    &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/regressao-linear/"&gt;Regressão Linear&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/intro-machine-learning/"&gt;Machine Learning&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/xgboost/"&gt;XGBoost&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/deep-learning/"&gt;Deep Learning&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+]
+
+
+.pull-right[
+&lt;div class="container center"&gt;
+  &lt;div class="card"&gt;
+    &lt;h2&gt;Extração de dados&lt;/h2&gt;
+    &lt;hr style = "background-color: #eeba30;"/&gt;
+    &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/web-scraping/"&gt;Web scraping&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div class="container center"&gt;
+  &lt;div class="card"&gt;
+    &lt;h2&gt;Comunicação e automação&lt;/h2&gt;
+    &lt;hr style = "background-color: #ff6699;"/&gt;
+    &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/dashboards/"&gt;Dashboards com R&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href = "https://www.curso-r.com/cursos/deploy/"&gt;Deploy&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class: middle, center
+
+# Sobre o curso
+
+---
+
+# Web scraping
+
+## Introdução
+
+- O que é e quando fazer web scraping
+
+- O ciclo do web scraping
+
+- Noções de protocolo HTTP
+
+- Acessando dados de APIs
+
+---
+
+# Web scraping
+
+## Web scraping de fato
+
+- Como fazer requisições HTTP e baixar páginas web a partir do R
+
+- Como estruturar dados de arquivos .xml, .html e .json
+
+- Como iterar algoritmos no R
+
+---
+
+# Web scraping
+
+## Tópicos
+
+- Tratamento de erros
+
+- Paralelização
+
+- Páginas dinâmicas com Selenium
+
+---
+
+# Resultados
+
+No final, você terá dados suficientes para montar um dashboard como esse!
+
+&lt;img src="img/dash.jpg" width="1707" /&gt;
+
+---
+
+# Dinâmica
+
+- Pelo menos um exemplo prático por aula
+    - Foco: APIs públicas, sites públicos
+
+- Exercícios para casa, com entrega facultativa
+
+- Trabalho final, com entrega obrigatória
+    - As pessoas que fizerem os melhores trabalhos receberão uma bolsa para fazer qualquer curso da Curso-R
+    - Mais detalhes sobre o trabalho final nas próximas aulas
+
+---
+
+# Tirando dúvidas
+
+- **Não existe dúvida idiota**.
+ 
+- Nem sempre é trivial fazer a pergunta certa para que outra pessoa esclareça a sua dúvida. Neste curso, **vamos mostrar melhores práticas na hora de fazer perguntas sobre programação**.
+ 
+- Fora do horário de aula ou monitoria:
+  - perguntas gerais sobre o curso deverão ser feitas no Classroom.
+  - perguntas sobre R, principalmente as que envolverem código, deverão ser enviadas no [nosso discourse](https://discourse.curso-r.com/). Se envolver web scraping, é importante especificar a página que está querendo acessar e como você faria para encontrá-la manualmente.
+
+- [Veja aqui dicas de como fazer uma boa pergunta](https://discourse.curso-r.com/t/como-escrever-uma-boa-pergunta/542).
+
+---
+# Por que usar o discourse?
+
+- Muito melhor para escrever textos que possuem códigos. Com ele, podemos usar o pacote `{reprex}`!
+
+- Saber pesquisar sobre erros e fazer a pergunta certa é essencial para aprender e resolver problemas de programação.
+
+- No discourse, teremos mais pessoas acompanhando e respondendo as dúvidas.
+
+- Em um ambiente aberto, as suas dúvidas vão contribuir com a comunidade.
+
+### https://discourse.curso-r.com/
+
+---
+
+# Material
+
+Para baixar o material,
+
+- Baixe a pasta do curso atual (pelo arquivo zip ou clonando)
+- Se estiver numa pasta compactada, descompacte o arquivo numa pasta
+- Abra o projeto (arquivo `.Rproj`)
+- Rode
+
+
+```r
+if (!require(CursoR))
+  remotes::install_github("curso-r/CursoR")
+
+CursoR::atualizar_material()
+```
+
+## Mais informações
+
+### https://curso-r.github.com/main-web-scraping
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
