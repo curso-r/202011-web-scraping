@@ -1,6 +1,6 @@
 ---
 title: "Web Scraping"
-subtitle: "Introdução ao Webscraping"
+subtitle: "Navegador"
 author: "<img src = 'https://d33wubrfki0l68.cloudfront.net/9b0699f18268059bdd2e5c21538a29eade7cbd2b/67e5c/img/logo/cursor1-5.png' width = '20%'>"
 date: ""
 output:

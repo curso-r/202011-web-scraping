@@ -170,10 +170,10 @@ httr::GET(u_pokemon)
 ```
 
     * Response [https://pokeapi.co/api/v2/pokemon/ditto]
-      Date: 2020-11-09 16:55
-      Status: 200
-      Content-Type: application/json; charset=utf-8
-      Size: 20.5 kB
+        Date: 2020-11-09 16:55
+        Status: 200
+        Content-Type: application/json; charset=utf-8
+        Size: 20.5 kB
 
 ---
 
@@ -188,11 +188,11 @@ u_pokemon <- paste0(url_base, endpoint)      # cola os textos
 httr::GET(u_pokemon)
 ```
 
-    Response [https://pokeapi.co/api/v2/pokemon/ditto]
-      Date: 2020-11-09 16:55
-      * Status: 200
-      Content-Type: application/json; charset=utf-8
-      Size: 20.5 kB
+      Response [https://pokeapi.co/api/v2/pokemon/ditto]
+        Date: 2020-11-09 16:55
+    *   Status: 200
+        Content-Type: application/json; charset=utf-8
+        Size: 20.5 kB
 
 ---
 
@@ -223,11 +223,11 @@ u_pokemon <- paste0(url_base, endpoint)      # cola os textos
 httr::GET(u_pokemon)
 ```
 
-    Response [https://pokeapi.co/api/v2/pokemon/ditto]
-      Date: 2020-11-09 16:55
-      Status: 200
-      * Content-Type: application/json; charset=utf-8
-      Size: 20.5 kB
+      Response [https://pokeapi.co/api/v2/pokemon/ditto]
+        Date: 2020-11-09 16:55
+        Status: 200
+    *   Content-Type: application/json; charset=utf-8
+        Size: 20.5 kB
 
 ---
 
