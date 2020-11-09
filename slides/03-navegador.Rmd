@@ -24,6 +24,8 @@ class: middle, center
 
 # `r blue("Usando o navegador")`
 
+---
+
 # Exemplo 02: Sabesp
 
 - Nem sempre a API estará documentada.
