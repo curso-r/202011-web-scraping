@@ -28,8 +28,8 @@ Certifique que você está dentro do projeto criado no passo 2 e rode o
 código abaixo.
 
 **Observação**: Assim que rodar o código abaixo, o programa vai pedir
-uma escolha de opções. Escolha o número correspondente ao curso de R
-para Ciência de Dados 1!
+uma escolha de opções. Escolha o número correspondente ao curso de Web
+Scraping!
 
 ``` r
 # Baixar ou atualizar material do curso
