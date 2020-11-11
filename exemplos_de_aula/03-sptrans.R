@@ -25,11 +25,25 @@ content(r_sptrans_login)
 # agora sim, estamos autenticados :)
 
 (r_sptrans <- httr::GET(u_sptrans_busca))
-httr::content(r_sptrans)
 
 # base de dados de posicoes (live)
 
+tab_posicoes <- r_sptrans %>%
+  httr::content(simplifyDataFrame = TRUE) %>%
+  purrr::pluck("l") %>%
+  tibble::as_tibble()
+
+dplyr::glimpse(tab_posicoes)
+
+# isso é uma list column... cada elemento
+# pode ser uma coisa complexa, como um data.frame
+tab_posicoes$vs[[1]]
+
 # base desaninhada (live)
 
+tab_posicoes_desaninhada <- tab_posicoes %>%
+  tidyr::unnest(vs)
+
 # visualizacao! (live)
+
 
