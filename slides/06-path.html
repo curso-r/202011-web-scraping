@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Web Scraping</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <script src="libs/header-attrs-2.5/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard-0.2.4/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard-0.2.4/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link rel="stylesheet" href="css/custom-intro.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Web Scraping
+## XPath e CSS
+### <img src = 'https://d33wubrfki0l68.cloudfront.net/9b0699f18268059bdd2e5c21538a29eade7cbd2b/67e5c/img/logo/cursor1-5.png' width = '20%'>
+
+---
+
+
+
+
+
+
+
+
+
+
+# XPath - XML Path Language
+
+- Exemplo: coletando todas as tags `&lt;p&gt;` (parágrafos)
+
+
+```r
+library(xml2)
+
+# Ler o HTML
+html &lt;- read_html("img/html_exemplo.html")
+
+# Coletar todos os nodes com a tag &lt;p&gt;
+nodes &lt;- xml_find_all(html, "//p")
+
+# Extrair o texto contido em cada um dos nodes
+text &lt;- xml_text(nodes)
+text
+```
+
+```
+## [1] "Sou um parágrafo!"      "Sou um parágrafo azul."
+```
+
+---
+# XPath - XML Path Language
+
+- Com `xml_attrs()` podemos extrair todos os atributos de um node:
+
+
+```r
+xml_attrs(nodes)
+```
+
+```
+## [[1]]
+## named character(0)
+## 
+## [[2]]
+##          style 
+## "color: blue;"
+```
+
+```r
+xml_attr(nodes, "style")
+```
+
+```
+## [1] NA             "color: blue;"
+```
+
+---
+# XPath - XML Path Language
+
+- Já com `xml_children()`, `xml_parents()` e `xml_siblings()` podemos acessar a
+estrutura de parentesco dos nós:
+
+
+```r
+heads &lt;- xml_find_all(html, "head")
+xml_siblings(heads)
+```
+
+```
+## {xml_nodeset (1)}
+## [1] &lt;body&gt;\n    &lt;h1&gt;Título Grande&lt;/h1&gt;\n    \n    &lt;h2&gt;Título um pouco menor&lt;/h2&gt;\n ...
+```
+
+```r
+xml_children(heads)
+```
+
+```
+## {xml_nodeset (3)}
+## [1] &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;\n
+## [2] &lt;meta charset="utf-8"&gt;\n
+## [3] &lt;title&gt;Título da abinha do navegador&lt;/title&gt;
+```
+
+---
+
+# {rvest}
+
+- Pacote construído sobre `{xml2}` e `{httr}`
+
+- Busca facilitar a vida com alguns helpers
+
+- Permite utilização de CSS path, uma alternativa ao XPath
+
+- Na prática, no entanto, pode ser improdutivo utilizá-lo
+
+- No nosso curso, só vamos utilizar a função `rvest::html_table()`, que transforma o conteúdo de  uma tag `&lt;table&gt;` em um `data.frame`.
+
+
+---
+# CSS
+
+- CSS (Cascading Style Sheets) descrevem como os elementos HTML devem se
+apresentar na tela. Ele é responsável pela aparência da página.
+
+
+```html
+&lt;p style='color: blue;'&gt;Sou um parágrafo azul.&lt;/p&gt;
+```
+
+- O atributo `style` é uma das maneiras de mexer na aparência utilizando CSS. No
+exemplo,
+
+- `color` é uma **property** do CSS e 
+- `blue` é um **value** do CSS.
+
+- Para associar esses pares **properties/values** aos elementos de um DOM, existe uma ferramenta chamada **CSS selectors**. Assim como fazemos com XML, podemos usar esses seletores (através do pacote `rvest`) para extrair os nós de uma página HTML.
+
+---
+# CSS
+
+- Abaixo vemos um `.html` e um `.css` que é usado para estilizar o primeiro. Se os nós indicados forem encontrados pelos seletores do CSS, então eles sofrerão as mudanças indicadas.
+
+&lt;img src="img/html_exemplo_com_css_a_parte3.png" width="646" style="display: block; margin: auto;" /&gt;
+
+---
+# Seletores CSS vs. XPath
+
+- A grande vantagem do XPath é permitir que acessemos os filhos, pais e irmãos de um nó. De fato os seletores CSS são mais simples, mas eles também são mais limitados.
+
+- O bom é que se tivermos os seletores CSS, podemos transformá-los sem muita dificuldade em um query XPath:
+
+- Seletor de tag: `p` = `//p`
+- Seletor de classe: `.azul` = `//*[@class='azul']`
+- Seletor de id: `#meu-p-favorito` = `//*[@id='meu-p-favorito']`
+
+- Além disso, a maior parte das ferramentas que utilizaremos ao longo do processo trabalham preferencialmente com XPath.
+
+---
+# Seletores CSS vs. XPath
+
+
+```r
+html &lt;- read_html("img/html_exemplo_css_a_parte.html")
+xml_find_all(html, "//p")
+```
+
+```
+## {xml_nodeset (3)}
+## [1] &lt;p&gt;Sou um par?grafo normal.&lt;/p&gt;
+## [2] &lt;p class="azul"&gt;Sou um par?grafo azul.&lt;/p&gt;
+## [3] &lt;p id="meu-p-favorito" class="azul"&gt;Sou um par?grafo azul e negrito.&lt;/p&gt;
+```
+
+```r
+xml_find_all(html, "//*[@class='azul']")
+```
+
+```
+## {xml_nodeset (2)}
+## [1] &lt;p class="azul"&gt;Sou um par?grafo azul.&lt;/p&gt;
+## [2] &lt;p id="meu-p-favorito" class="azul"&gt;Sou um par?grafo azul e negrito.&lt;/p&gt;
+```
+
+---
+# Seletores CSS vs. XPath
+
+
+```r
+rvest::html_nodes(html, ".azul")
+```
+
+```
+## {xml_nodeset (2)}
+## [1] &lt;p class="azul"&gt;Sou um par?grafo azul.&lt;/p&gt;
+## [2] &lt;p id="meu-p-favorito" class="azul"&gt;Sou um par?grafo azul e negrito.&lt;/p&gt;
+```
+
+- Note que `//p` indica que estamos fazendo uma busca na tag `p`, enquanto `//*` indica que estamos fazendo uma busca em qualquer tag.
+
+---
+# Exemplo
+
+Acesse o site de buscas [DuckDuckGo.com](https://duckduckgo.com). Baixe a página de buscas. Dica: use a função `httr::GET()`.
+
+--
+
+
+```r
+library(httr)
+GET("https://duckduckgo.com")
+```
+
+```
+## Response [https://duckduckgo.com/]
+##   Date: 2020-11-16 04:33
+##   Status: 200
+##   Content-Type: text/html; charset=UTF-8
+##   Size: 5.76 kB
+## &lt;!DOCTYPE html&gt;
+## &lt;!--[if IEMobile 7 ]&gt; &lt;html lang="en_US" class="no-js iem7"&gt; &lt;![endif]--&gt;
+## &lt;!--[if lt IE 7]&gt; &lt;html class="ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7 no-js" lang="en_US...
+## &lt;!--[if IE 7]&gt;    &lt;html class="ie7 lt-ie10 lt-ie9 lt-ie8 no-js" lang="en_US"&gt; &lt;![e...
+## &lt;!--[if IE 8]&gt;    &lt;html class="ie8 lt-ie10 lt-ie9 no-js" lang="en_US"&gt; &lt;![endif]--&gt;
+## &lt;!--[if IE 9]&gt;    &lt;html class="ie9 lt-ie10 no-js" lang="en_US"&gt; &lt;![endif]--&gt;
+## &lt;!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]&gt;&lt;!--&gt;&lt;html class="no-js" lan...
+## 
+## &lt;head&gt;
+## 	&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge" /&gt;
+## ...
+```
+
+---
+# Exemplo
+
+Examine o código-fonte da página para encontrar o elemento correspondente à
+caixa de busca e copie o seu XPath pelo navegador. Esse XPath é apropriado? Por
+que?
+
+--
+
+```
+//*[@id="search_form_input_homepage"]
+```
+
+Alternativa com CSS Path
+
+```
+#search_form_input_homepage
+```
+
+Uma forma mais simples talvez fosse
+
+```
+//input[@name="q"]
+```
+
+---
+
+# Vamos ao R!
+
+&lt;img src="img/cat.gif" style="display: block; margin: auto;" /&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

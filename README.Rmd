@@ -55,7 +55,8 @@ CursoR::atualizar_material()
 ```{r, echo = FALSE}
 knitr::kable(
   tibble::tibble(
-    slide = CursoR:::list_github_files(main_repo, "slides/", "html"),
+    slide = CursoR:::list_github_files(main_repo, "slides/", "html") %>% 
+      stringr::str_subset("/img/", negate = TRUE),
     link = paste0("https://curso-r.github.io/", main_repo, "/", slide)
   ) %>% 
     dplyr::filter(!stringr::str_detect(slide, "_files/"))
