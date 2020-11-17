@@ -106,9 +106,20 @@ baixar_ano_mes(18, 5)
 
 ## ARQUIVO BUGADO
 
-# readr::read_delim(
-#   "result_19_2.xlsx", delim = "\0"
-# )
+readr::guess_encoding("exemplos_de_aula/result_19_2.xlsx")
+
+read.delim(
+  "exemplos_de_aula/result_19_2.xlsx",
+  fileEncoding = "UTF-16LE",
+  sep = "\t",
+  header = TRUE,
+  stringsAsFactors = FALSE
+)
+
+
+
+
+
 # readr::read_file_raw("result_19_2.xlsx") %>%
 #   rawToChar() %>%
 #   stringr::str_remove_all("\\0")
