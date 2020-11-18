@@ -59,3 +59,4 @@ CursoR::atualizar_material()
 | 06-html.R        | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/06-html.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/06-html.R</a>               |
 | 07-chancedegol.R | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/07-chancedegol.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/07-chancedegol.R</a> |
 | 08-tjsp.R        | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/08-tjsp.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/08-tjsp.R</a>               |
+| 09-ssp.R         | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/09-ssp.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/09-ssp.R</a>                 |
