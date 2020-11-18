@@ -46,6 +46,7 @@ CursoR::atualizar_material()
 | slides/04-auth.html                | <a href="https://curso-r.github.io/main-web-scraping/slides/04-auth.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/04-auth.html</a>                               | <a href='https://curso-r.github.io/main-web-scraping/slides/04-auth.pdf'> PDF </a>                |
 | slides/05-html.html                | <a href="https://curso-r.github.io/main-web-scraping/slides/05-html.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/05-html.html</a>                               | <a href='https://curso-r.github.io/main-web-scraping/slides/05-html.pdf'> PDF </a>                |
 | slides/06-path.html                | <a href="https://curso-r.github.io/main-web-scraping/slides/06-path.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/06-path.html</a>                               | <a href='https://curso-r.github.io/main-web-scraping/slides/06-path.pdf'> PDF </a>                |
+| slides/07-iteracao.html            | <a href="https://curso-r.github.io/main-web-scraping/slides/07-iteracao.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/07-iteracao.html</a>                       | <a href='https://curso-r.github.io/main-web-scraping/slides/07-iteracao.pdf'> PDF </a>            |
 
 ## Scripts usados em aula
 
@@ -60,3 +61,4 @@ CursoR::atualizar_material()
 | 07-chancedegol.R | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/07-chancedegol.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/07-chancedegol.R</a> |
 | 08-tjsp.R        | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/08-tjsp.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/08-tjsp.R</a>               |
 | 09-ssp.R         | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/09-ssp.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/09-ssp.R</a>                 |
+| 10-wiki.R        | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/10-wiki.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/10-wiki.R</a>               |
