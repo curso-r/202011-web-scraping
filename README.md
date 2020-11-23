@@ -38,28 +38,31 @@ CursoR::atualizar_material()
 
 ## Slides
 
-| Slide                              | Link                                                                                                                                                                                    | Link em PDF                                                                                       |
-|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|
-| slides/01-introducao-ao-curso.html | <a href="https://curso-r.github.io/main-web-scraping/slides/01-introducao-ao-curso.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/01-introducao-ao-curso.html</a> | <a href='https://curso-r.github.io/main-web-scraping/slides/01-introducao-ao-curso.pdf'> PDF </a> |
-| slides/02-introducao-ao-ws.html    | <a href="https://curso-r.github.io/main-web-scraping/slides/02-introducao-ao-ws.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/02-introducao-ao-ws.html</a>       | <a href='https://curso-r.github.io/main-web-scraping/slides/02-introducao-ao-ws.pdf'> PDF </a>    |
-| slides/03-navegador.html           | <a href="https://curso-r.github.io/main-web-scraping/slides/03-navegador.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/03-navegador.html</a>                     | <a href='https://curso-r.github.io/main-web-scraping/slides/03-navegador.pdf'> PDF </a>           |
-| slides/04-auth.html                | <a href="https://curso-r.github.io/main-web-scraping/slides/04-auth.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/04-auth.html</a>                               | <a href='https://curso-r.github.io/main-web-scraping/slides/04-auth.pdf'> PDF </a>                |
-| slides/05-html.html                | <a href="https://curso-r.github.io/main-web-scraping/slides/05-html.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/05-html.html</a>                               | <a href='https://curso-r.github.io/main-web-scraping/slides/05-html.pdf'> PDF </a>                |
-| slides/06-path.html                | <a href="https://curso-r.github.io/main-web-scraping/slides/06-path.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/06-path.html</a>                               | <a href='https://curso-r.github.io/main-web-scraping/slides/06-path.pdf'> PDF </a>                |
-| slides/07-iteracao.html            | <a href="https://curso-r.github.io/main-web-scraping/slides/07-iteracao.html" class="uri">https://curso-r.github.io/main-web-scraping/slides/07-iteracao.html</a>                       | <a href='https://curso-r.github.io/main-web-scraping/slides/07-iteracao.pdf'> PDF </a>            |
+| Slide                              | Link                                                                             | Link em PDF                                                                                       |
+|:-----------------------------------|:---------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|
+| slides/01-introducao-ao-curso.html | <https://curso-r.github.io/main-web-scraping/slides/01-introducao-ao-curso.html> | <a href='https://curso-r.github.io/main-web-scraping/slides/01-introducao-ao-curso.pdf'> PDF </a> |
+| slides/02-introducao-ao-ws.html    | <https://curso-r.github.io/main-web-scraping/slides/02-introducao-ao-ws.html>    | <a href='https://curso-r.github.io/main-web-scraping/slides/02-introducao-ao-ws.pdf'> PDF </a>    |
+| slides/03-navegador.html           | <https://curso-r.github.io/main-web-scraping/slides/03-navegador.html>           | <a href='https://curso-r.github.io/main-web-scraping/slides/03-navegador.pdf'> PDF </a>           |
+| slides/04-auth.html                | <https://curso-r.github.io/main-web-scraping/slides/04-auth.html>                | <a href='https://curso-r.github.io/main-web-scraping/slides/04-auth.pdf'> PDF </a>                |
+| slides/05-html.html                | <https://curso-r.github.io/main-web-scraping/slides/05-html.html>                | <a href='https://curso-r.github.io/main-web-scraping/slides/05-html.pdf'> PDF </a>                |
+| slides/06-path.html                | <https://curso-r.github.io/main-web-scraping/slides/06-path.html>                | <a href='https://curso-r.github.io/main-web-scraping/slides/06-path.pdf'> PDF </a>                |
+| slides/07-iteracao.html            | <https://curso-r.github.io/main-web-scraping/slides/07-iteracao.html>            | <a href='https://curso-r.github.io/main-web-scraping/slides/07-iteracao.pdf'> PDF </a>            |
+| slides/08-webdriver.html           | <https://curso-r.github.io/main-web-scraping/slides/08-webdriver.html>           | <a href='https://curso-r.github.io/main-web-scraping/slides/08-webdriver.pdf'> PDF </a>           |
 
 ## Scripts usados em aula
 
-| script           | link                                                                                                                                                                                      |
-|:-----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01-pokemon.R     | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/01-pokemon.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/01-pokemon.R</a>         |
-| 02-sabesp.R      | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/02-sabesp.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/02-sabesp.R</a>           |
-| 03-sptrans.R     | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/03-sptrans.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/03-sptrans.R</a>         |
-| 04-twitter.R     | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/04-twitter.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/04-twitter.R</a>         |
-| 05-covid.R       | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/05-covid.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/05-covid.R</a>             |
-| 06-html.R        | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/06-html.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/06-html.R</a>               |
-| 07-chancedegol.R | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/07-chancedegol.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/07-chancedegol.R</a> |
-| 08-tjsp.R        | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/08-tjsp.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/08-tjsp.R</a>               |
-| 09-ssp.R         | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/09-ssp.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/09-ssp.R</a>                 |
-| 10-wiki.R        | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/10-wiki.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/10-wiki.R</a>               |
-| 11-ws-example.R  | <a href="https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/11-ws-example.R" class="uri">https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/11-ws-example.R</a>   |
+| script           | link                                                                              |
+|:-----------------|:----------------------------------------------------------------------------------|
+| 01-pokemon.R     | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/01-pokemon.R>     |
+| 02-sabesp.R      | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/02-sabesp.R>      |
+| 03-sptrans.R     | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/03-sptrans.R>     |
+| 04-twitter.R     | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/04-twitter.R>     |
+| 05-covid.R       | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/05-covid.R>       |
+| 06-html.R        | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/06-html.R>        |
+| 07-chancedegol.R | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/07-chancedegol.R> |
+| 08-tjsp.R        | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/08-tjsp.R>        |
+| 09-ssp.R         | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/09-ssp.R>         |
+| 10-wiki.R        | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/10-wiki.R>        |
+| 11-ws-example.R  | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/11-ws-example.R>  |
+| 12-pesqele.R     | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/12-pesqele.R>     |
+| 13-pbi.R         | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/13-pbi.R>         |
