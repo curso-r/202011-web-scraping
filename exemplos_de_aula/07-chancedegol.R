@@ -2,9 +2,25 @@ library(tidyverse)
 library(httr)
 library(rvest)
 
-u_cdg <- "http://www.chancedegol.com.br/br19.htm"
 
-cdg_html <- GET(u_cdg)
+u_cdg_19 <- "http://www.chancedegol.com.br/br10.htm"
+u_cdg_18 <- "http://www.chancedegol.com.br/br18.htm"
+
+u <- "https://www.curso-r.com"
+pags <- 1:5
+
+
+
+tictoc::tic()
+ufs <- unique(geobr::grid_state_correspondence_table$code_state)
+for (i in ufs) {
+  u <- stringr::str_glue("http://www.chancedegol.com.br/br{i}.htm")
+  print(u)
+}
+tictoc::toc()
+
+
+
 
 cdg_table <- cdg_html  %>%
   read_html() %>%
