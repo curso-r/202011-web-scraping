@@ -1,0 +1,35 @@
+on:
+  schedule:
+  - cron: "*/10 * * * *"
+  push:
+    branches: [main,master]
+
+name: update-data
+
+jobs:
+  render:
+    name: update-data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install remotes, and the local package
+        env:
+          GITHUB_PAT: ${{ secrets.PAT }}
+        run: |
+          install.packages(c("remotes", "usethis"), repos = "https://packagemanager.rstudio.com/all/__linux__/bionic/latest")
+          remotes::install_local(".", repos = "https://packagemanager.rstudio.com/all/__linux__/bionic/latest")
+        shell: Rscript {0}
+      - name: Execute Script
+        run: |
+          Rscript "inst/update-data.R"
+      - name: Commit results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/dados.rda
+          git commit -m 'Update data' || echo "Update data"
+          git push origin || echo "Update data"

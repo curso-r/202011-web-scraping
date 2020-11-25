@@ -66,3 +66,5 @@ CursoR::atualizar_material()
 | 11-ws-example.R  | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/11-ws-example.R>  |
 | 12-pesqele.R     | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/12-pesqele.R>     |
 | 13-pbi.R         | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/13-pbi.R>         |
+| 14-captcha.R     | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/14-captcha.R>     |
+| 15-log.R         | <https://curso-r.github.io/202011-web-scraping/exemplos_de_aula/15-log.R>         |
