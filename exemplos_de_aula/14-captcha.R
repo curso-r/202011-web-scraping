@@ -2,9 +2,9 @@ tjmg_cpopg_download <- function(id, dir = ".", modelo = NULL) {
 
   fs::dir_create(dir)
   id <- stringr::str_remove_all(id, "[^0-9]")
-  
+
   dir <- paste0(dir, "/", id)
-  
+
   if (!dir.exists(dir)) {
     fs::dir_create(dir)
     u <- "https://www4.tjmg.jus.br/juridico/sf/proc_resultado.jsp?"
@@ -16,15 +16,16 @@ tjmg_cpopg_download <- function(id, dir = ".", modelo = NULL) {
     )
     r0 <- httr::GET(u, query = q)
     captcha <- tjmg_has_captcha(r0)
-    
+
     if (!is.na(captcha)) {
       tmp <- tempfile(fileext = ".png")
       httr::GET(
         paste0("https://www4.tjmg.jus.br/juridico/sf/", captcha),
+        # "http://www4.tjmg.jus.br/juridico/sf/captcha.svl",
         httr::write_disk(tmp, overwrite = TRUE)
       )
       solved_captcha <- decryptr::decrypt(tmp, modelo)
-      
+
       payload <- list(
         "callCount" = "1",
         "nextReverseAjaxIndex" = "0",
